@@ -1,6 +1,11 @@
-package co4353distributedsystems.login.resources;
+package co4353distributedsystems.login.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class UserCredentials {
+    @Id
     private String username;
     private String password;
 

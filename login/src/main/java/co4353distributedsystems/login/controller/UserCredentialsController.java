@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ import java.util.List;
 public class UserCredentialsController {
     @Autowired
     private UserCredentialsService userCredentialsService;
+    @Autowired
+    private RestTemplate restTemplate;
     @GetMapping("/login")
     public List<UserCredentials> logInGetMethod(){
         return userCredentialsService.getAllUsers();
@@ -36,7 +39,9 @@ public class UserCredentialsController {
     public ResponseEntity loginPostMethod(@RequestBody UserCredentials userCredentials){
         UserCredentials databaseCredentials=userCredentialsService.getSingleUser(userCredentials);
         if(databaseCredentials.getPassword().equals(userCredentials.getPassword())){
-            return new ResponseEntity(userCredentialsService.getSingleUser(userCredentials),HttpStatus.OK);
+            List<String> loggedInUserPreferences=restTemplate.getForObject("http://movie-preferences/preferences/"+userCredentials.getUsername(),List.class);
+
+            return new ResponseEntity(loggedInUserPreferences,HttpStatus.OK);
         }
         else{
             return new ResponseEntity(userCredentialsService.getSingleUser(userCredentials),HttpStatus.FORBIDDEN);

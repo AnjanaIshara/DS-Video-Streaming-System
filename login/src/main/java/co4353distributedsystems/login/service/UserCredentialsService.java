@@ -18,5 +18,10 @@ public class UserCredentialsService {
     public List<UserCredentials> getAllUsers(){
         return userCredentialsRepository.findAll();
     }
+    public UserCredentials getSingleUser(UserCredentials postData){
+        return userCredentialsRepository.findById(postData.getUsername()).get();
+
+    }
+
 
 }

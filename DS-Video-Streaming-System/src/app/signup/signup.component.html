@@ -1,0 +1,16 @@
+<form [formGroup]="profileForm" (ngSubmit)="onRegister()">
+
+  <label for="for-username">Username: </label><br>
+  <input id="username" type="text" formControlName="username"><br>
+
+  <label for="for-password">Password: </label><br>
+  <input id="password" type="password" formControlName="password"><br>
+  <label for="for-categories">Categories </label><br>
+  <input id="action" type="checkbox" formControlName="action" value="action"><label for="for-action-categories">Action
+  movies </label><br>
+  <input id="comedy" type="checkbox" formControlName="comedy"><label for="for-comedy-categories">Comedy
+  movies </label><br>
+  <input id="horror" type="checkbox" formControlName="horror"><label for="for-horror-categories">Horror
+  movies </label><br>
+  <button class="button" type="submit">Register</button>
+</form>

@@ -12,13 +12,16 @@ import java.util.List;
 public class UserCredentialsService {
     @Autowired
     private UserCredentialsRepository userCredentialsRepository;
-    public void saveCredential(UserCredentials userCredentials){
+
+    public void saveCredential(UserCredentials userCredentials) {
         userCredentialsRepository.save(userCredentials);
     }
-    public List<UserCredentials> getAllUsers(){
+
+    public List<UserCredentials> getAllUsers() {
         return userCredentialsRepository.findAll();
     }
-    public UserCredentials getSingleUser(UserCredentials postData){
+
+    public UserCredentials getSingleUser(UserCredentials postData) {
         return userCredentialsRepository.findById(postData.getUsername()).get();
 
     }

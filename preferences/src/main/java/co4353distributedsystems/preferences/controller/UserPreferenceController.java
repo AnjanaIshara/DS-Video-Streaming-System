@@ -13,14 +13,17 @@ import java.util.List;
 public class UserPreferenceController {
     @Autowired
     private UserPreferenceService userPreferenceService;
+
+    @CrossOrigin
     @PostMapping("/preferences")
-    public ResponseEntity preferencesPostMethod(@RequestBody UserPreferences userPreferences){
+    public ResponseEntity preferencesPostMethod(@RequestBody UserPreferences userPreferences) {
         userPreferenceService.savePreferences(userPreferences);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(userPreferences, HttpStatus.OK);
     }
+
     @GetMapping("/preferences/{username}")
-    public List<String> singleUser(@PathVariable String username){
-        List<String> userPreferencesList=userPreferenceService.getPreferencesByUsername(username);
+    public List<String> singleUser(@PathVariable String username) {
+        List<String> userPreferencesList = userPreferenceService.getPreferencesByUsername(username);
         return userPreferencesList;
     }
 

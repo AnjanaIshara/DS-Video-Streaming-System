@@ -14,14 +14,16 @@ import java.util.List;
 public class MovieReviewController {
     @Autowired
     private MovieReviewService movieReviewService;
+
     @PostMapping("/moviereview")
-    public ResponseEntity movieReviewPostMethod(@RequestBody MovieReview movieReview){
+    public ResponseEntity movieReviewPostMethod(@RequestBody MovieReview movieReview) {
         movieReviewService.saveReview(movieReview);
         return new ResponseEntity(HttpStatus.OK);
     }
+
     @GetMapping("/moviereview/{moviename}")
-    public List<MovieReview> getReviews(@PathVariable String moviename){
-        List<MovieReview> reviewsForSpecificMovie=movieReviewService.getReviewForMovie(moviename);
+    public List<MovieReview> getReviews(@PathVariable String moviename) {
+        List<MovieReview> reviewsForSpecificMovie = movieReviewService.getReviewForMovie(moviename);
         return reviewsForSpecificMovie;
     }
 }

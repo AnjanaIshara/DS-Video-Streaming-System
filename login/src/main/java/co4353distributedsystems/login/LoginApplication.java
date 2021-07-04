@@ -12,7 +12,10 @@ import org.springframework.web.client.RestTemplate;
 public class LoginApplication {
     @Bean
     @LoadBalanced
-    public RestTemplate getRestTemplate(){return new RestTemplate();}
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(LoginApplication.class, args);
     }

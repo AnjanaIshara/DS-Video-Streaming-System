@@ -13,11 +13,13 @@ import java.util.List;
 public class MovieReviewService {
     @Autowired
     private MovieReviewRepository movieReviewRepository;
-    public void saveReview(MovieReview postData){
+
+    public void saveReview(MovieReview postData) {
         movieReviewRepository.save(postData);
     }
-    public List<MovieReview> getReviewForMovie(String movieName){
 
-        return  movieReviewRepository.findByMovieName(movieName);
+    public List<MovieReview> getReviewForMovie(String movieName) {
+
+        return movieReviewRepository.findByMovieName(movieName);
     }
 }

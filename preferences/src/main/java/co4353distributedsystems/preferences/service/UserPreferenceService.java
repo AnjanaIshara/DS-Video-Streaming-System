@@ -11,10 +11,12 @@ import java.util.List;
 public class UserPreferenceService {
     @Autowired
     private UserPreferenceRepository userPreferenceRepository;
-    public List<String> getPreferencesByUsername(String username){
+
+    public List<String> getPreferencesByUsername(String username) {
         return userPreferenceRepository.findById(username).get().getChoices();
     }
-    public void savePreferences(UserPreferences postData){
+
+    public void savePreferences(UserPreferences postData) {
         userPreferenceRepository.save(postData);
     }
 }

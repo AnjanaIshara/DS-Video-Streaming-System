@@ -4,6 +4,7 @@ import co4353distributedsystems.login.model.UserCredentials;
 
 import co4353distributedsystems.login.service.UserCredentialsService;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -44,9 +45,10 @@ public class UserCredentialsController {
     public ResponseEntity loginPostMethod(@RequestBody UserCredentials userCredentials) {
         UserCredentials databaseCredentials = userCredentialsService.getSingleUser(userCredentials);
         if (databaseCredentials.getPassword().equals(userCredentials.getPassword())) {
-            List<String> loggedInUserPreferences = restTemplate.getForObject("http://movie-preferences/preferences/" + userCredentials.getUsername(), List.class);
-
-            return new ResponseEntity(loggedInUserPreferences, HttpStatus.OK);
+            //List<String> loggedInUserPreferences = restTemplate.getForObject("http://movie-preferences/preferences/" + userCredentials.getUsername(), List.class);
+            JSONObject returnObject=new JSONObject();
+            returnObject.put("message","login ok");
+            return new ResponseEntity(returnObject, HttpStatus.OK);
         } else {
             return new ResponseEntity(userCredentialsService.getSingleUser(userCredentials), HttpStatus.FORBIDDEN);
         }

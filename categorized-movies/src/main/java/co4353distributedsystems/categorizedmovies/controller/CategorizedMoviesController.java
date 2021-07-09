@@ -8,11 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class CategorizedMoviesController {
     @Autowired
     private CategorizedMoviesService categorizedMoviesService;
-
+    @GetMapping("/index")
+    public String testEndpoint(){
+        return "Helloo";
+    }
     @CrossOrigin
     @PostMapping("/categorizedmovie")
     public ResponseEntity categorizedMoviePostMethod(@RequestBody CategorizedMovies categorizedMovies){

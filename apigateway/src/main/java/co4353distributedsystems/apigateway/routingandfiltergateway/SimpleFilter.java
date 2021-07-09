@@ -28,8 +28,9 @@ public class SimpleFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
+        //System.out.println("before==>"+ctx.getRequest().getHeader("Authorization"));
         HttpServletRequest request = ctx.getRequest();
-
+        //System.out.println("After==>"+request.getHeader("Authorization"));
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
 
         return null;

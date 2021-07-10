@@ -26,4 +26,6 @@ public class MovieReviewController {
         List<MovieReview> reviewsForSpecificMovie = movieReviewService.getReviewForMovie(moviename);
         return reviewsForSpecificMovie;
     }
+
+    @GetMapping("/getreviewbyrating/{")
 }

@@ -19,4 +19,10 @@ public class UserPreferenceService {
     public void savePreferences(UserPreferences postData) {
         userPreferenceRepository.save(postData);
     }
+    public UserPreferences getUserPreference(String userName){
+        return userPreferenceRepository.getUserPreferencesByUserName(userName);
+    }
+    public void updateChoices(List<String> newChoices,String userName){
+        userPreferenceRepository.updateUserChoices(newChoices, userName);
+    }
 }

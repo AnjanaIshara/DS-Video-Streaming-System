@@ -26,5 +26,23 @@ public class UserPreferenceController {
         List<String> userPreferencesList = userPreferenceService.getPreferencesByUsername(username);
         return userPreferencesList;
     }
+    @PostMapping("/addpreferences")
+    public ResponseEntity editPreferences(@RequestBody UserPreferences userPreferences){
+        UserPreferences dataInDB=userPreferenceService.getUserPreference(userPreferences.getUsername());
+        dataInDB.getChoices().removeAll(userPreferences.getChoices());
+        dataInDB.getChoices().addAll(userPreferences.getChoices());
+        userPreferenceService.updateChoices(dataInDB.getChoices(),userPreferences.getUsername());
+        return new ResponseEntity(userPreferenceService.getPreferencesByUsername(userPreferences.getUsername()),HttpStatus.OK);
+    }
+    @PostMapping("removepreferences")
+    public ResponseEntity removePreferences(@RequestBody UserPreferences userPreferences){
+        UserPreferences dataInDB=userPreferenceService.getUserPreference(userPreferences.getUsername());
+        dataInDB.getChoices().removeAll(userPreferences.getChoices());
+        userPreferenceService.updateChoices(dataInDB.getChoices(),userPreferences.getUsername());
+        return new ResponseEntity(userPreferenceService.getPreferencesByUsername(userPreferences.getUsername()),HttpStatus.OK);
+
+    }
+
+
 
 }

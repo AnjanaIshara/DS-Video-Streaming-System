@@ -27,5 +27,12 @@ public class MovieReviewController {
         return reviewsForSpecificMovie;
     }
 
-    @GetMapping("/getreviewbyrating/{")
+    @GetMapping("/getreviewbyrating/{ratingvalue}")
+    public List<MovieReview> getReviewsByRating(@PathVariable int ratingvalue){
+        return movieReviewService.getReviewsAbove(ratingvalue);
+    }
+    @GetMapping("/getreviewbyusername/{username}")
+    public List<MovieReview> getReviewsByUsername(@PathVariable String username){
+        return movieReviewService.getUserReviews(username);
+    }
 }

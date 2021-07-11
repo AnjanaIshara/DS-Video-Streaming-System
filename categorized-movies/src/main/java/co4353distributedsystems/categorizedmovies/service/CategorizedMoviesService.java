@@ -16,4 +16,7 @@ public class CategorizedMoviesService {
 
         return categorizedMoviesRepository.findByCategory(movieCategory);
     }
+    public List<String> getAllCategories(){
+        return categorizedMoviesRepository.getAllCategories();
+    }
 }

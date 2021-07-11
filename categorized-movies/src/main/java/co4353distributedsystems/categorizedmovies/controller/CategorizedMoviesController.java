@@ -12,10 +12,7 @@ import java.util.List;
 public class CategorizedMoviesController {
     @Autowired
     private CategorizedMoviesService categorizedMoviesService;
-    @GetMapping("/index")
-    public String testEndpoint(){
-        return "Helloo";
-    }
+
     @CrossOrigin
     @PostMapping("/categorizedmovie")
     public ResponseEntity categorizedMoviePostMethod(@RequestBody CategorizedMovies categorizedMovies){
@@ -27,4 +24,10 @@ public class CategorizedMoviesController {
     public List<CategorizedMovies> getcategorizedMovies(@PathVariable String category){
         return categorizedMoviesService.getCategorizedMovies(category);
     }
+    @CrossOrigin
+    @GetMapping("/getallcategories")
+    public List<String> getAllCategories(){
+        return categorizedMoviesService.getAllCategories();
+    }
+
 }

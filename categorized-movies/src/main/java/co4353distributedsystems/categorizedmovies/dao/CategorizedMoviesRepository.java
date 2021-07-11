@@ -9,4 +9,7 @@ import java.util.List;
 public interface CategorizedMoviesRepository extends JpaRepository<CategorizedMovies,Long> {
     @Query("select movies from CategorizedMovies movies where movies.category=?1")
     List<CategorizedMovies> findByCategory(String category);
+    @Query("select DISTINCT category from CategorizedMovies ")
+    List<String> getAllCategories();
+
 }

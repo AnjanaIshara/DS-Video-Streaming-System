@@ -22,4 +22,11 @@ public class MovieReviewService {
 
         return movieReviewRepository.findByMovieName(movieName);
     }
+    public List<MovieReview> getReviewsAbove(int rating){
+        return movieReviewRepository.findRatingAbove(rating);
+    }
+    public List<MovieReview> getUserReviews(String username){
+        return movieReviewRepository.findByUsername(username);
+    }
 }
+

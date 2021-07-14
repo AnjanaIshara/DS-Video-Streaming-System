@@ -1,0 +1,121 @@
+<body>
+<!-- Top navigation 
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+      <img class="brand-logo" src="assets/images/ic_launcher.png" alt="positronX.io Logo">
+    </a>
+  </nav>
+-->
+ 
+
+  <div id="header">
+		<div align='middle'>
+			<div >
+				<a></a>
+			</div>
+			<ul id="navigation">
+			<!--	<li>
+					<a href="home.html">Home</a>
+				</li>
+				<li class="dropdown">
+
+                    <a>Practice</a>
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                                <a href="WelcomeC++.html">Welcome to C++ </a>
+                                <a href="HelloWorld.html">Hello World...! </a>
+                                <a href="Variables.html">Variables and User inputs</a>
+                                <a href="ConditionalStatements.html">Conditional statements</a>
+                                
+                        </div>
+                    </div>
+                        
+
+				</li>
+				<li>
+					<a href="Compete.html">Complete</a>
+        </li>
+        
+      -->
+        <li>
+          <a class="btn btnPrimary" (click)="Parkings()">Park Details</a>
+				</li>
+				<li>
+				<a class="btn btnPrimary" (click)="authService.SignOut()">Log Out</a>
+				</li>
+			
+			</ul>
+        </div>
+
+    </div>
+	
+	<div id=backgroundColorTopic>
+		<h2  align=middle><b>Profile</b></h2>
+	</div>
+  
+  <!-- Sidebar navigation -->
+  <div align=middle class="container-fluid">
+    <div class="row">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <!--
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-user"></i>User Profile
+              </a>
+            </li>
+          -->
+            <!-- Calling SignOut() Api from AuthService -->
+
+            <div class="formGroup">
+              <br><br>
+              
+            </div>
+        <!--
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+          -->
+          </ul>
+        </div>
+  
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+
+          <h1 class="nam">Hello <strong>{{(Name1) ? Name1 : 'User'}}</strong></h1>
+  
+          <!-- Show user data when logged in -->
+          <div class="row" *ngIf="authService.userData as user" >
+            <div class="col-md-12">
+              <div class="media">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/images/dummy-user.png'}}"
+                  alt="{{Name1}}">
+                <div class="media-body">
+                  <br><br>
+                  <p>Phone Number: <strong>{{PhoneNumber1}}</strong></p>
+                  <!--<p>User ID: <strong>{{user.uid}}</strong></p>-->
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <!--<p>Email Verified: <strong>{{EmailVerified1}}</strong></p>-->
+                  <p>No. of parks: <strong>{{ParkNo1}}</strong></p>
+                  <p>Admin Verified: <strong>{{checking1}}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+
+            
+            </script>
+  
+        </div>
+      </main>
+  
+    </div>
+  </div>
+
+
+</body>

@@ -1,0 +1,106 @@
+<body>
+  <div id=backgroundColorTopic>
+      <h2  align=middle><b>Sign Up</b></h2>
+    </div>
+    
+  
+  
+  <div class="displayTable" align='middle'>
+      <div class="displayTableCell">
+    
+        <div class="authBlock">
+          <br>
+  
+          <!-- <div class="formGroup" >
+            <b><label for="phone">Enter your name</label></b><br>
+            <input type="displayName" class="formControl" placeholder="Name" #displayName required>
+          </div>
+  
+          <div class="formGroup">
+            <br><br>
+           <b> <label for="phone">Enter a phone number</label></b><br>
+            <input type="phoneNumber" class="formControl" placeholder="0*********" pattern="[0-9]{10}" #phoneNumber required>
+          </div> -->
+    
+          <div class="formGroup">
+            <br><br>
+            <b><label for="phone">Enter your email</label></b><br>
+            <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+          </div>
+    
+          <div class="formGroup">
+            <br><br>
+            <b><label for="phone">Enter your password</label></b><br>
+            <input type="password" class="formControl" placeholder="Password" #userPwd required>
+          </div>
+  
+          <div class="formGroup">
+            <br><br>
+            <b><label for="phone">Confirm your password</label></b><br>
+            <input type="password" class="formControl" placeholder="Confirm Password" #Pwd2 required>
+          </div>
+  
+          <br>
+         
+          <!--
+          <script>
+            
+              function myFunction() {
+  
+                console.log("SDSsffadda")
+                if (userEmail.value==null || userPwd.value==null || displayName.value==null || phoneNumber.value==null || pwd2.value!=userPwd.value) {
+              
+            }
+            else{
+              console.log("SDSsffadda")
+              authService.SignUp(userEmail.value, userPwd.value,displayName.value)
+            }
+            }
+            </script>
+  
+          -->
+            
+          <!--<button onclick="myFunction()">Sign Up</button>-->
+  
+          
+          <div class="formGroup">
+            <br><br>
+            <input type="button" class="buttonSignup" value="Sign Up" >
+          </div>
+  
+          <!--
+          <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value,displayName.value,phoneNumber.value)">
+          -->
+  
+        <!--  <div class="formGroup">
+            <span class="or"><span class="orInner">Or</span></span>
+          </div>
+        -->
+          <!-- Continue with Google -->
+         <!-- <div class="formGroup">
+            <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+              <i class="fab fa-google-plus-g"></i>
+              Continue with Google
+            </button>
+          </div>
+        -->
+          <!-- Continue with Facebook
+           <div class="formGroup">
+            <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
+              <i class="fab fa-facebook"></i>
+              Continue with Facebook
+            </button>
+          </div> 
+        </div> -->
+    <br>
+        <div class="redirectToLogin">
+          <span>Already have an account? <b><span class="redirect" routerLink="/sign-in">Log In</span></b></span>
+  
+          
+        </div>
+      </div>
+      <br><br><br>
+    </div>
+  
+    </div>
+  </body>

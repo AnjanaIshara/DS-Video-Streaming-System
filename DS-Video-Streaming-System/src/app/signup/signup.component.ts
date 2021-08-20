@@ -53,8 +53,8 @@ export class SignupComponent implements OnInit {
     //   console.log("response from preferences==>",data);
     // })
     forkJoin([
-      this.http.post('http://localhost:8081/signup', this.RegisterObj, {headers: {'Content-Type': 'application/json'}}),
-      this.http.post('http://localhost:8082/preferences', this.PreferencesObj, {headers: {'Content-Type': 'application/json'}})
+      this.http.post('http://localhost:8989/api/Movie-Login/signup', this.RegisterObj, {headers: {'Content-Type': 'application/json'}}),
+      this.http.post('http://localhost:8989/api/Movie-Preferences/preferences', this.PreferencesObj, {headers: {'Content-Type': 'application/json'}})
     ]).subscribe(data => {
       console.log("signup response==>", data[0]),
         console.log("Preferences response==>", data[1])

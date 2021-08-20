@@ -1,5 +1,6 @@
 package co4353distributedsystems.login.controller;
 
+import co4353distributedsystems.login.model.CategorizedMovies;
 import co4353distributedsystems.login.model.UserCredentials;
 
 import co4353distributedsystems.login.security.MyUserDetailsService;
@@ -19,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -58,10 +60,20 @@ public class UserCredentialsController {
     public ResponseEntity loginPostMethod(@RequestBody UserCredentials userCredentials) {
         UserCredentials databaseCredentials = userCredentialsService.getSingleUser(userCredentials);
         if (databaseCredentials.getPassword().equals(userCredentials.getPassword())) {
-            //List<String> loggedInUserPreferences = restTemplate.getForObject("http://movie-preferences/preferences/" + userCredentials.getUsername(), List.class);
+            List<String> loggedInUserPreferences = restTemplate.getForObject("http://movie-preferences/preferences/" + userCredentials.getUsername(), List.class);
+            List<CategorizedMovies> suggestedMovies=new ArrayList<>();
+            for (String s: loggedInUserPreferences){
+                List<CategorizedMovies> movieResults=restTemplate.getForObject("http://categorized-movies/categorizedmovie/"+s , List.class);
+                suggestedMovies.addAll(movieResults);
+            }
+
 
             JSONObject returnObject=new JSONObject();
             returnObject.put("message","login ok");
+            returnObject.put("Movie Categories",loggedInUserPreferences);
+            returnObject.put("Movie results",suggestedMovies);
+
+
             try{
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userCredentials.getUsername(),userCredentials.getPassword()));
 

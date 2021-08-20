@@ -11,5 +11,7 @@ public interface CategorizedMoviesRepository extends JpaRepository<CategorizedMo
     List<CategorizedMovies> findByCategory(String category);
     @Query("select DISTINCT category from CategorizedMovies ")
     List<String> getAllCategories();
+    @Query("select  movies from CategorizedMovies movies where movies.category IN ?1")
+    List<CategorizedMovies> getUserSpecifications(List<String> choices);
 
 }

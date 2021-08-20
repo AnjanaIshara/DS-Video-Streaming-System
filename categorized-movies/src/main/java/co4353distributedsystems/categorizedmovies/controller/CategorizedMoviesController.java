@@ -2,6 +2,7 @@ package co4353distributedsystems.categorizedmovies.controller;
 
 import co4353distributedsystems.categorizedmovies.model.CategorizedMovies;
 import co4353distributedsystems.categorizedmovies.service.CategorizedMoviesService;
+import org.hibernate.cfg.CreateKeySecondPass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,5 +30,8 @@ public class CategorizedMoviesController {
     public List<String> getAllCategories(){
         return categorizedMoviesService.getAllCategories();
     }
+
+
+
 
 }

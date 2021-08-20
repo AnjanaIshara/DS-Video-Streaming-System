@@ -19,4 +19,7 @@ public class CategorizedMoviesService {
     public List<String> getAllCategories(){
         return categorizedMoviesRepository.getAllCategories();
     }
+    public List<CategorizedMovies> getUserSpecifications(List<String> choices){
+        return categorizedMoviesRepository.getUserSpecifications(choices);
+    }
 }

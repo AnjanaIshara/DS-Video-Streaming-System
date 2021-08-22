@@ -12,6 +12,7 @@ import {LoginComponent} from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UserComponent } from './user/user.component';
+import {MatCardModule} from '@angular/material/card';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatCheckboxModule,
     HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

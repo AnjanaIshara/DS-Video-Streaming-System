@@ -1,1 +1,11 @@
-<p>user works!</p>
+
+      <mat-card  *ngFor="let card of cards">
+          
+        <mat-card-title>{{card["moviename"]}}</mat-card-title>
+        <h4>{{card["category"]}}</h4>
+      <img  [src]="card['url']" alt="poster">
+
+      </mat-card>
+    
+
+

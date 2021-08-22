@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import {forkJoin} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 export class LoginComponent implements OnInit {
   InputJsonObj: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
     this.InputJsonObj = JSON.parse(JSON.stringify(this.profileForm.value));
     console.log(this.InputJsonObj);
     this.http.post('http://localhost:8989/api/Movie-Login/login', this.InputJsonObj, {headers: {'Content-Type': 'application/json'}}).toPromise().then(data => {
-      console.log(data);
-      
+      this.router.navigateByUrl('user', { state:data });
     })
 
   }

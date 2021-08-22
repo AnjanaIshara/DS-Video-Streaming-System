@@ -11,11 +11,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'user', component: UserComponent },
 
 ];
 @NgModule({
@@ -23,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

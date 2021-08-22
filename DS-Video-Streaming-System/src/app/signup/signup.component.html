@@ -1,3 +1,8 @@
+
+<mat-button-toggle-group name="Options" aria-label="Font Style">
+  <mat-button-toggle value="signup" routerLink='/signup'>SignUp</mat-button-toggle>
+  <mat-button-toggle value="login" routerLink='/login'>LogIn</mat-button-toggle>
+</mat-button-toggle-group>
 <form [formGroup]="profileForm" (ngSubmit)="onRegister()">
 
   <label for="for-username">Username: </label><br>

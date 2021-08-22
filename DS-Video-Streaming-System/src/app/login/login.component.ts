@@ -3,6 +3,7 @@ import {FormGroup, FormControl} from '@angular/forms';
 import {forkJoin} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,8 +26,9 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.InputJsonObj = JSON.parse(JSON.stringify(this.profileForm.value));
     console.log(this.InputJsonObj);
-    this.http.post('http://localhost:8081/login', this.InputJsonObj, {headers: {'Content-Type': 'application/json'}}).toPromise().then(data => {
+    this.http.post('http://localhost:8989/api/Movie-Login/login', this.InputJsonObj, {headers: {'Content-Type': 'application/json'}}).toPromise().then(data => {
       console.log(data);
+      
     })
 
   }

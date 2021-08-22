@@ -1,12 +1,4 @@
 <div class="Title">
   <h1>{{title}}</h1>
 </div>
-<div class="Selection" *ngIf='loginSignupPrompt'>
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="Selection-Items" [(ngModel)]="LoginOrSignup"
-                           (ngModelChange)="onSignupLoginChange($event)">
-    <mat-button-toggle value="login">Log In</mat-button-toggle>
-    <mat-button-toggle value="signup">Sign Up</mat-button-toggle>
-  </mat-button-toggle-group>
-  <app-signup *ngIf='signupComponent'></app-signup>
-  <app-login *ngIf='loginComponent'></app-login>
-</div>
+<router-outlet></router-outlet>

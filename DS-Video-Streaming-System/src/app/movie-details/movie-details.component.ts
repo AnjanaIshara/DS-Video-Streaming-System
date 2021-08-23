@@ -6,17 +6,21 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css']
+  styleUrls: ['./movie-details.component.css','movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
   moviename:any;
   movieurl:any;
   moviereviews:any;
+  username:any;
+  usercomment:any;
+  rating = 0;
   constructor(private route: ActivatedRoute,private http: HttpClient) { }
   
   ngOnInit(): void {
     this.moviename=this.route.snapshot.paramMap.get('movie_name');
     console.log(this.moviename);
+    this.username=localStorage.getItem('username');
     this.getMovieReviews(this.moviename).subscribe(data=>
       {
         this.movieurl=Object.values(data)[0];

@@ -3,6 +3,7 @@ package co4353distributedsystems.login.controller;
 import co4353distributedsystems.login.model.CategorizedMovies;
 import co4353distributedsystems.login.model.UserCredentials;
 
+import co4353distributedsystems.login.model.UserPreferences;
 import co4353distributedsystems.login.security.MyUserDetailsService;
 import co4353distributedsystems.login.service.UserCredentialsService;
 
@@ -91,12 +92,23 @@ public class UserCredentialsController {
         }
 
     }
+    @CrossOrigin
     @GetMapping("/auth")
     public ResponseEntity dummyGet() {
 
         JSONObject returnObject=new JSONObject();
         returnObject.put("msg","Auth Granted");
 
+        return new ResponseEntity(returnObject,HttpStatus.OK);
+    }
+    @CrossOrigin
+    @GetMapping("/getprofiledetails/{username}")
+    public ResponseEntity getProfileData(@PathVariable String username){
+        UserCredentials userCredentials=userCredentialsService.getUserByUserName(username);
+        List<String> userPreferences=restTemplate.getForObject("http://movie-preferences/preferences/"+username,List.class);
+        JSONObject returnObject=new JSONObject();
+        returnObject.put("usercreds",userCredentials);
+        returnObject.put("choices",userPreferences);
         return new ResponseEntity(returnObject,HttpStatus.OK);
     }
 

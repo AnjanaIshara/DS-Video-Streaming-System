@@ -1,5 +1,7 @@
 <mat-toolbar color="primary">
     <span>Movie Suggestions for You</span>
+    <button mat-button routerLink='../myaccount'>My Account</button>
+
     <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
     <span *ngIf="gridColumns === 6">Six Columns</span>
     <span *ngIf="gridColumns === 5">Five Columns</span>

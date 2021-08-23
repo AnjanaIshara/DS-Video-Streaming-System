@@ -19,6 +19,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'user', component: UserComponent },
   {path: 'movie-details/:movie_name',component:MovieDetailsComponent },
+  {path: 'myaccount',component:MyaccountComponent},
 
 ];
 @NgModule({
@@ -35,7 +37,8 @@ const routes: Routes = [
     LoginComponent,
     HomepageComponent,
     UserComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MyaccountComponent
   ],
   imports: [
     BrowserModule,

@@ -31,6 +31,13 @@ public class CategorizedMoviesController {
         return categorizedMoviesService.getAllCategories();
     }
 
+    @CrossOrigin
+    @GetMapping("/getspecificurl/{moviename}")
+    public String getImageUrl(@PathVariable String moviename){
+
+        return categorizedMoviesService.getImageUrl(moviename);
+    }
+
 
 
 

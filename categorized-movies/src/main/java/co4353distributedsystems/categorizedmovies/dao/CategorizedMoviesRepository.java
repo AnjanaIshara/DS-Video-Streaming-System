@@ -13,5 +13,7 @@ public interface CategorizedMoviesRepository extends JpaRepository<CategorizedMo
     List<String> getAllCategories();
     @Query("select  movies from CategorizedMovies movies where movies.category IN ?1")
     List<CategorizedMovies> getUserSpecifications(List<String> choices);
+    @Query("Select movies.url from CategorizedMovies  movies WHERE movies.moviename=?1")
+    String getImageUrl(String moviename);
 
 }

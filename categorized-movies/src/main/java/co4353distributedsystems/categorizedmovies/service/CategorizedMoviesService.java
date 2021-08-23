@@ -22,4 +22,7 @@ public class CategorizedMoviesService {
     public List<CategorizedMovies> getUserSpecifications(List<String> choices){
         return categorizedMoviesRepository.getUserSpecifications(choices);
     }
+    public String getImageUrl(String moviename){
+        return categorizedMoviesRepository.getImageUrl(moviename);
+    }
 }

@@ -23,20 +23,17 @@
                 </mat-card>
             </div>
         </div>
+
     </div>
-    <p></p>
-    <div class="center">
-        <form class="form-group" (ngSubmit)="onSubmit()">
-            <label for="username">User Name</label>
-            <input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name" disabled>
-            <label for="comment">Comment</label>
-            <textarea type="text" class="form-control" id="comment" required [(ngModel)]="usercomment" name="comment"></textarea>
-            <label for="Ratings">Ratings</label>
-            <div style="font-size: xx-large; color: orange;">
-                <ngb-rating [max]="5" [(rate)]="rating" [readonly]="false"></ngb-rating>
-            </div>
-            <br>
-            <button class="button button2" type="submit">Submit Review</button>
-        </form>
-    </div>
-</div>
+    <form (ngSubmit)="onSubmit()">
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name" disabled>
+        <label for="comment">Comment</label>
+        <textarea type="text" class="form-control" id="comment" required [(ngModel)]="usercomment" name="comment"></textarea>
+        <label for="Ratings">Ratings</label>
+        <div style="font-size: xx-large; color: orange;">
+
+            <ngb-rating [max]="5" [(rate)]="rating" [readonly]="false"></ngb-rating>
+        </div>
+        <button class="button button2" type="submit">Submit Review</button>
+    </form>

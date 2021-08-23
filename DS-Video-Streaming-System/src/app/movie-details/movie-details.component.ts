@@ -66,5 +66,6 @@ export class MovieDetailsComponent implements OnInit {
    this.http.post('http://localhost:8989/api/Movie-Reviews/moviereview',this.jsonObj,{headers: {'Content-Type': 'application/json'}}).toPromise()
    .then(data=>{console.log(data)})
   }
+  
 
 }

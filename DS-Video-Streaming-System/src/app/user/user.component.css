@@ -1,0 +1,7 @@
+.grid-container {
+    display: flex;
+  }
+.example-card {
+   
+    max-width: 500px;
+  }

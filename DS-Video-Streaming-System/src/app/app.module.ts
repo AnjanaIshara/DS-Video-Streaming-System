@@ -13,12 +13,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UserComponent } from './user/user.component';
 import {MatCardModule} from '@angular/material/card';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'user', component: UserComponent },
+  {path: 'movie-details/:movie_name',component:MovieDetailsComponent },
 
 ];
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     SignupComponent,
     LoginComponent,
     HomepageComponent,
-    UserComponent
+    UserComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

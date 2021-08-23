@@ -1,16 +1,15 @@
+<app-homepage></app-homepage>
+<div class="login-form">
+  <form [formGroup]="profileForm" (ngSubmit)="onLogin()">
+  
+    <label for="for-username">Username: </label><br>
+    <input id="username" type="text" formControlName="username"><br>
+  
+    <label for="for-password">Password: </label><br>
+    <input id="password" type="password" formControlName="password"><br>
+  
+    <button class="button" type="submit">Log In</button>
+  </form>
 
-<mat-button-toggle-group name="Options" aria-label="Font Style">
-  <mat-button-toggle value="signup" routerLink='/signup'>SignUp</mat-button-toggle>
-  <mat-button-toggle value="login" routerLink='/login'>LogIn</mat-button-toggle>
-</mat-button-toggle-group>
-<form [formGroup]="profileForm" (ngSubmit)="onLogin()">
-
-  <label for="for-username">Username: </label><br>
-  <input id="username" type="text" formControlName="username"><br>
-
-  <label for="for-password">Password: </label><br>
-  <input id="password" type="password" formControlName="password"><br>
-
-  <button class="button" type="submit">Log In</button>
-</form>
+</div>
 

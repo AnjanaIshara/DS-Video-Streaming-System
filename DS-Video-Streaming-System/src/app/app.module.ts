@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { UserComponent } from './user/user.component';
 import {MatCardModule} from '@angular/material/card';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
     MatCheckboxModule,
     HttpClientModule,
     MatCardModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

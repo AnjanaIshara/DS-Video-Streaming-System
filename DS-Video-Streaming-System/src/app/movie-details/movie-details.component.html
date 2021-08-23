@@ -1,11 +1,26 @@
 <h1>{{moviename}}</h1>
 <img src={{movieurl}} alt="img Poster"/>
 
-<div *ngFor="let reviews of moviereviews">
-    <mat-card>
+<div >
+    <mat-card *ngFor="let reviews of moviereviews" >
 
         <mat-card-title>{{reviews["comments"]}}</mat-card-title>
         <mat-card-subtitle>{{reviews["username"]}}</mat-card-subtitle>
+        <div style="font-size: xx-large; color: orange;">
+
+            <ngb-rating [max]="5" [rate]="reviews['ratings']" [readonly]="false"></ngb-rating>
+        </div>
         <mat-card-content>Ratings : {{reviews["ratings"]}}</mat-card-content>
     </mat-card>
+</div>
+<div class="form-group">
+    <label for="username">User Name</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name" disabled>
+    <label for="comment">Comment</label>
+    <textarea type="text" class="form-control" id="comment" required [(ngModel)]="usercomment" name="comment"></textarea>
+    <label for="Ratings">Ratings</label>
+    <div style="font-size: xx-large; color: orange;">
+
+        <ngb-rating [max]="5" [(rate)]="rating" [readonly]="false"></ngb-rating>
+    </div>
 </div>

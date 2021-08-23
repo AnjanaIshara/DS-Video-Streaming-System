@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
     this.InputJsonObj = JSON.parse(JSON.stringify(this.profileForm.value));
     console.log(this.InputJsonObj);
     this.http.post('http://localhost:8989/api/Movie-Login/login', this.InputJsonObj, {headers: {'Content-Type': 'application/json'}}).toPromise().then(data => {
-      this.router.navigateByUrl('user', { state:data });
+    localStorage.setItem('username',this.InputJsonObj["username"]);  
+    this.router.navigateByUrl('user', { state:data });
+
     })
 
   }

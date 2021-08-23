@@ -1,0 +1,2 @@
+INSERT INTO MOVIE_REVIEW (COMMENTS,MOVIENAME,RATINGS,USERNAME) values ('good movie','Hang over', 4,'isuru'),
+                                                                      ('Interesting movie', 'Hang over',5,'anjana');

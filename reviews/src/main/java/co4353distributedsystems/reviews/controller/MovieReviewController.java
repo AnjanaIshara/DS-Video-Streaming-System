@@ -14,23 +14,24 @@ import java.util.List;
 public class MovieReviewController {
     @Autowired
     private MovieReviewService movieReviewService;
-
+    @CrossOrigin
     @PostMapping("/moviereview")
     public ResponseEntity movieReviewPostMethod(@RequestBody MovieReview movieReview) {
         movieReviewService.saveReview(movieReview);
         return new ResponseEntity(HttpStatus.OK);
     }
-
+    @CrossOrigin
     @GetMapping("/moviereview/{moviename}")
     public List<MovieReview> getReviews(@PathVariable String moviename) {
         List<MovieReview> reviewsForSpecificMovie = movieReviewService.getReviewForMovie(moviename);
         return reviewsForSpecificMovie;
     }
-
+    @CrossOrigin
     @GetMapping("/getreviewbyrating/{ratingvalue}")
     public List<MovieReview> getReviewsByRating(@PathVariable int ratingvalue){
         return movieReviewService.getReviewsAbove(ratingvalue);
     }
+    @CrossOrigin
     @GetMapping("/getreviewbyusername/{username}")
     public List<MovieReview> getReviewsByUsername(@PathVariable String username){
         return movieReviewService.getUserReviews(username);

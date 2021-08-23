@@ -48,3 +48,12 @@ input[type=password] {
     border: 2px solid rgba(0, 195, 255, 0.993);
     border-radius: 4px;
 }
+
+input[type="checkbox"] {
+   display: inline-block;
+  content: "\00a0"; /* Blank space */
+  width: 25px;
+  margin-right: 5px;
+  text-align: center;
+  background: #f2f2f2;
+}

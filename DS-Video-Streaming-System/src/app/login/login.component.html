@@ -1,15 +1,14 @@
 <app-homepage></app-homepage>
 <div class="login-form">
-  <form [formGroup]="profileForm" (ngSubmit)="onLogin()">
-  
-    <label for="for-username">Username: </label><br>
-    <input id="username" type="text" formControlName="username"><br>
-  
-    <label for="for-password">Password: </label><br>
-    <input id="password" type="password" formControlName="password"><br>
-  
-    <button class="button" type="submit">Log In</button>
-  </form>
+    <form [formGroup]="profileForm" (ngSubmit)="onLogin()">
+
+        <label for="for-username">Username: </label><br>
+        <input id="username" type="text" formControlName="username"><br>
+
+        <label for="for-password">Password: </label><br>
+        <input id="password" type="password" formControlName="password"><br>
+
+        <button class="button button2" type="submit">Log In</button>
+    </form>
 
 </div>
-

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
   cards=[]
@@ -22,6 +22,14 @@ export class UserComponent implements OnInit {
 
     console.log(this.cards);
    
+  }
+
+  title = 'My Suggestions';
+
+  gridColumns = 6;
+
+  toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 6 ? 5 : 6;
   }
 
 }

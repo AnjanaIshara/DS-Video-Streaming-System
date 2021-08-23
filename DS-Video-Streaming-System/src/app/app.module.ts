@@ -15,6 +15,10 @@ import { UserComponent } from './user/user.component';
 import {MatCardModule} from '@angular/material/card';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -45,6 +49,11 @@ const routes: Routes = [
     HttpClientModule,
     MatCardModule,
     NgbModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

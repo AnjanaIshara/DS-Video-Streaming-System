@@ -6,4 +6,20 @@ INSERT INTO CATEGORIZED_MOVIES (CATEGORY,MOVIENAME,URL) values('comedy','Mr. Bea
                                                                  ('action','Mad Max','https://drive.google.com/uc?export=view&id=1DAVjpKTJIm7rpU09RWLYHU0fd_MocghR'),
                                                                ('horror','The Silence','https://drive.google.com/uc?export=view&id=1Q-gwwC6L3zRxBILj2m0QKVvjT_e0w8rG'),
                                                                ('horror','The Fantasy Island','https://drive.google.com/uc?export=view&id=1hZRYfPeenNXUCy1Jo2zgOloujqBt8d1_'),
-                                                               ('horror','The turing','https://drive.google.com/uc?export=view&id=1dQp9qxnHLKmnY9J0pCzKKCdoTyFBMftF');
+                                                               ('horror','The turing','https://drive.google.com/uc?export=view&id=1dQp9qxnHLKmnY9J0pCzKKCdoTyFBMftF'),
+                                                              ('action','Inception','https://drive.google.com/uc?export=view&id=1Ovd2b9n66hKFBW5aJ3GIMI0ZumU4tIrL'),
+                                                               ('action','John Wick','https://drive.google.com/uc?export=view&id=1AvJkRNadEDR4xClZr229LLaD5H5uRBMX'),
+                                                              ('action','Tenet','https://drive.google.com/uc?export=view&id=1gRaWfr6uccCXn-OqRZM1DGgDyHiKM4uT'),
+                                                              ('action','The Avengers','https://drive.google.com/uc?export=view&id=1A66iblQMGicNrtOV2KxQkDjdsiTTVmLh'),
+                                                               ('action','Avengers: Infinity War','https://drive.google.com/uc?export=view&id=1iNdd-31idhVtuBQz8jy0U68vYvzJfyLG'),
+                                                                ('action','Avengers: Endgame','https://drive.google.com/uc?export=view&id=1w2kDXE8r953ysmH0exqO-vjpliwQRk5B'),
+                                                               ('action','Deadpool 2','https://drive.google.com/uc?export=view&id=11R_GC5MN8jkLenGdjsZqFBrGImA7-H5O'),
+                                                               ('horror','Heriditary','https://drive.google.com/uc?export=view&id=1ob6R_X2L3ftiTISs_Ws_DG866tFzn-5-'),
+                                                               ('horror','Rosemerrys Baby','https://drive.google.com/uc?export=view&id=1EQPVpIozH10cRObe8hjRT_bXJTc2CmaW'),
+                                                               ('horror','The Exorcist','https://drive.google.com/uc?export=view&id=1U4kNeEacLrV-bvNbdWZM5-Jc_QfdxTNN'),
+                                                               ('horror','Silence of the Lambs','https://drive.google.com/uc?export=view&id=1ZYj7N9dreOgXXF1GRshpIhkCaUyDykOI'),
+                                                               ('horror','The Omen','https://drive.google.com/uc?export=view&id=1xF1DvdhYlMOIwX_rFc9TQ2kMagKA-Pbf'),
+                                                               ('horror','Anabelle','https://drive.google.com/uc?export=view&id=19e5uwYo7oAcyXWx-zpfYI0hxrQkT1v_R'),
+                                                               ('horror','Us','https://drive.google.com/uc?export=view&id=1vh22uBaIu_ebu-rAcZ69zdFYUQ9Qv0KG'),
+                                                               ('horror','The Shining','https://drive.google.com/uc?export=view&id=1Znp414Ag6rK9Di-nByGh1jRfoyAkNt62');
+                                                               

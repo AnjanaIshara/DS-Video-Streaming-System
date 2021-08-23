@@ -1,6 +1,11 @@
 <h1>{{moviename}}</h1>
 <img src={{movieurl}} alt="img Poster"/>
 
-<mat-card *ngFor="let reviews of moviereviews">
-    
-</mat-card>
+<div *ngFor="let reviews of moviereviews">
+    <mat-card>
+
+        <mat-card-title>{{reviews["comments"]}}</mat-card-title>
+        <mat-card-subtitle>{{reviews["username"]}}</mat-card-subtitle>
+        <mat-card-content>Ratings : {{reviews["ratings"]}}</mat-card-content>
+    </mat-card>
+</div>

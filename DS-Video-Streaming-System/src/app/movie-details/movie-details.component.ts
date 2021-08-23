@@ -10,12 +10,21 @@ import { Observable } from 'rxjs';
 })
 export class MovieDetailsComponent implements OnInit {
   moviename:any;
+  movieurl:any;
+  moviereviews:any;
   constructor(private route: ActivatedRoute,private http: HttpClient) { }
   
   ngOnInit(): void {
     this.moviename=this.route.snapshot.paramMap.get('movie_name');
     console.log(this.moviename);
-    this.getMovieReviews(this.moviename).subscribe(data=>console.log(data));
+    this.getMovieReviews(this.moviename).subscribe(data=>
+      {
+        this.movieurl=Object.values(data)[0];
+        this.moviereviews=Object.values(data)[1];
+        // console.log(`movie URL>>> ${this.movieurl}`)
+        // console.log(`movie REVIEWS>>> ${this.moviereviews[0]["username"]}`)
+      }
+      );
   }
   getMovieReviews(id:any):Observable<Reviews[]>{
     return this.http.get<Reviews[]>(`http://localhost:8989/api/Movie-Reviews/moviereview/${id}`);

@@ -3,5 +3,5 @@ export interface Reviews{
     COMMENTS:string,
     MOVIENAME:string,
     RATINGS:number,
-    USERNAME:string
+    USERNAME:string,
 }
